@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Sign Up</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            /* background: linear-gradient(135deg, #ff9a9e, #fad0c4); */
+            background-image: url('./images/images/back5.jpg');
+       background-position: center;
+       background-repeat: no-repeat;
+        background-size: cover;
+            overflow: hidden;
+        }
+
+        .container {
+            position: relative;
+            width: 400px;
+            max-width: 90%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            transition: transform 0.5s ease;
+        }
+
+        .container .forms {
+            position: relative;
+            width: 200%;
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* Form Containers */
+        .form-container {
+            position: relative;
+            width: 50%;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Title */
+        .form-container h2 {
+            color: #fff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            outline: none;
+            transition: background 0.3s ease;
+        }
+
+        .form-container input:focus {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Buttons */
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: #6e8efb;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background: #a777e3;
+        }
+
+        /* Toggle Button */
+        .toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-size: 0.9em;
+            color: #6e8efb;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle:hover {
+            background: #6e8efb;
+            color: #fff;
+        }
+
+        /* Active States */
+        .container.active .forms {
+            transform: translateX(-50%);
+        }
+
+        @media screen and (max-width: 600px) {
+            .form-container {
+                padding: 20px 15px;
+            }
+
+            .form-container h2 {
+                font-size: 1.5em;
+            }
+
+            .form-container input,
+            .form-container button {
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .toggle {
+                font-size: 0.8em;
+                padding: 5px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="forms">
+            <!-- Login Form -->
+            <div class="form-container login">
+                <h2>LOGIN IN</h2>
+                <form action="/login" method="post">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Login</button>
+                    <button type="submit"> <a href="./register.html" target="_blank"> Register </a> </button>
+                </form>
+            </div>
+            <!-- Sign-Up Form -->
+            <!-- <div class="form-container signup">
+                <h2>Sign Up</h2>
+                <form action="/signup" method="post">
+                    <input type="text" name="fullname" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <button type="submit">Register</button>
+                </form>
+            </div> -->
+        </div>
+        <!-- Toggle Button -->
+        <!-- <div class="toggle" id="toggle">Sign Up</div> -->
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const toggle = document.getElementById('toggle');
+
+        toggle.addEventListener('click', () => {
+            container.classList.toggle('active');
+            toggle.textContent = container.classList.contains('active') ? 'Sign In' : 'Sign Up';
+        });
+    </script>
+</body>
+</html>

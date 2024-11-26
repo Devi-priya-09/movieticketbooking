@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Registration Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(120deg, rgba(102, 166, 255, 0.8), rgba(255, 128, 128, 0.8)); */
+    background-image: url('./images/images/back5.jpg');
+       background-position: center;
+       background-repeat: no-repeat;
+        background-size: cover;
+    /* animation: gradient-animation 6s infinite alternate; */
+    overflow: hidden;
+}
+
+/* Background Animation */
+@keyframes gradient-animation {
+    0% { background: linear-gradient(120deg, rgba(102, 166, 255, 0.8), rgba(255, 128, 128, 0.8)); }
+    50% { background: linear-gradient(120deg, rgba(89, 245, 198, 0.8), rgba(233, 130, 238, 0.8)); }
+    100% { background: linear-gradient(120deg, rgba(128, 216, 255, 0.8), rgba(255, 200, 128, 0.8)); }
+}
+
+/* Container */
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Transparent container */
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Blurred background effect */
+    animation: fade-in 1s ease;
+    width: 100%;
+    max-width: 400px;
+}
+
+@keyframes fade-in {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+/* Form Styles */
+.title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1); /* Transparent input fields */
+    color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-group input:focus {
+    border-color: rgba(102, 166, 255, 0.8);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    box-shadow: 0 8px 15px rgba(102, 166, 255, 0.4);
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(90deg, rgba(102, 166, 255, 0.8), rgba(89, 245, 198, 0.8));
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 15px rgba(102, 166, 255, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(102, 166, 255, 0.6);
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.login-link a {
+    color: rgba(102, 166, 255, 0.9);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: rgba(89, 245, 198, 1);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+
+    .input-group input {
+        padding: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-title">Register</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                </div><center>
+                <!-- <button style="color: red;">Register</button></center> -->
+                <p class="login-link"> <a href="">REGISTER</a></p>
+            </form>
+            <p class="login-link">Already have an account? <a href="./login.html">logn In</a></p>
+            <p class="login-link"> <a href="./index.html" target="_blank">HOME</a></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AMARAN - Movie Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      /* background: linear-gradient(to right, #2c3e50, #4ca1af); */
+      
+        background-image: url('./images/images/kanuva.avif');
+       background-position: center;
+       background-repeat: no-repeat;
+        background-size: cover;
+
+      color: #fff;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+      animation: slideDown 1s ease-in-out;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+      color: #fff !important;
+      margin-right: 15px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #4ca1af !important;
+      transform: translateY(-3px);
+    }
+
+    .btn-search {
+      color: #fff;
+      background-color: #4ca1af;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-search:hover {
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+    .flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .flex .one img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 8px;
+      animation: scaleUp 1s ease-in-out;
+    }
+
+    .flex .two {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .flex .two h2 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .flex .two button {
+      margin-top: 10px;
+      padding: 10px 15px;
+      font-size: 1.2rem;
+      color: #fff;
+      background-color: #444;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-align: left;
+      transition: background-color 0.3s, transform 0.3s ease;
+    }
+
+    .flex .two button:hover {
+      background-color: #555;
+      transform: scale(1.05);
+    }
+
+    /* BOOK NOW Button Animation */
+    .btn-book {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      color: #fff;
+      background: linear-gradient(to right, #4ca1af, #2c3e50);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.4s ease;
+      animation: bounceIn 1.5s infinite alternate;
+    }
+
+    .btn-book:hover {
+      transform: translateY(-5px);
+      background: linear-gradient(to right, #2c3e50, #4ca1af);
+    }
+
+    /* Video Styling */
+    .iframe {
+      margin: 30px 0;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 8px;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+      }
+
+      to {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-50%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes scaleUp {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .flex {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .flex .two {
+        align-items: center;
+      }
+
+      .flex .two h2 {
+        font-size: 2.5rem;
+      }
+
+      .flex .two button {
+        font-size: 1rem;
+      }
+
+      iframe {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand text-white" href="#">AMARAN</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Theatres</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-search" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="flex">
+    <div class="one">
+      <img src="./images/images/kanuva.avif" alt="Amaran Poster">
+    </div>
+    <div class="two">
+      <h2>KANGUVA</h2>
+      <button>⭐ 6.5/10 (115K Votes)</button>
+      <button>Tamil, Hindi, Telugu, Kannada</button>
+      <h5>2h 34m | Action, Adventure, Fantasy</h5>
+      <a href="./ticket1.html" target="_blank" class="btn-book">BOOK NOW</a>
+    </div>
+  </div>
+
+  <h1>About the Movie</h1>
+  <h4>Prepare to witness epic emotions, raw rage, primal courage, and ruthless revenge in its purest form.</h4>
+
+  <div class="iframe">
+    <iframe src="https://www.youtube.com/embed/XRetgAOmNyE?si=Kad9nBSRZ-mFtahm" title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
